@@ -11,7 +11,9 @@
 > *「社会就是一个大筛子，用学历筛孩子，用房子筛父母，用工作筛家庭。」*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-Standard-green)](https://agentskills.io)
+[![skills.sh](https://img.shields.io/badge/skills.sh-Compatible-blue)](https://skills.sh)
+[![Multi-Runtime](https://img.shields.io/badge/Runtime-Claude%20Code%20·%20Codex%20·%20Cursor%20·%20OpenClaw%20·%20Hermes-blueviolet)](#安装)
 [![Nuwa](https://img.shields.io/badge/Made%20with-女娲.skill-orange)](https://github.com/alchaincyf/nuwa-skill)
 
 <br>
@@ -177,12 +179,42 @@
 
 ## 安装
 
+本 skill 基于开放的 [Agent Skills](https://agentskills.io) 协议，可在任何 skills-compatible 的 AI agent runtime 中运行（Claude Code、Codex、Cursor、OpenClaw、Hermes Agent、CodeBuddy、Workbuddy、Gemini CLI、OpenCode 等 50+ runtime）。
+
+### 方式一：一行命令（推荐，跨 runtime 自动检测）
+
 ```bash
 npx skills add alchaincyf/zhangxuefeng-skill
 ```
 
-然后在 Claude Code 里：
+通用 CLI 安装器（[vercel-labs/skills](https://github.com/vercel-labs/skills)，支持 55+ runtime）会自动识别当前 runtime 并把 skill 放到正确目录。需要指定 runtime 时加 `-a claude-code` / `-a codex` / `-a cursor` / `-a openclaw` 等参数。
 
+### 方式二：手动安装
+
+<details>
+<summary>展开查看各 runtime 的 skills 目录</summary>
+
+| Runtime | 安装路径 |
+|---|---|
+| Claude Code | `~/.claude/skills/zhangxuefeng-skill/` |
+| Codex CLI | `~/.codex/skills/zhangxuefeng-skill/` |
+| Cursor | `~/.cursor/skills/zhangxuefeng-skill/` |
+| OpenClaw | `~/.openclaw/workspace/skills/zhangxuefeng-skill/` |
+| Hermes Agent | 跑该 runtime 的 install 脚本或 clone 到其 skills 目录 |
+
+```bash
+git clone https://github.com/alchaincyf/zhangxuefeng-skill <对应路径>
+```
+
+</details>
+
+### 方式三：作为参考资料使用
+
+即使 runtime 不支持 Agent Skills 自动加载，你也可以把 `SKILL.md` 的内容粘贴进对话——它本质就是一份 markdown + YAML frontmatter。
+
+### 使用
+
+装好后，告诉你的 agent：
 ```
 > 用张雪峰的视角帮我分析这个专业选择
 > 张雪峰会怎么看这个职业方向？
